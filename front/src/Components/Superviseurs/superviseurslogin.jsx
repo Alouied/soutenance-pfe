@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import "./administrationlogin.css";
+import "./superviseurslogin.css";
 
-function Encadrant() {
+function Superviseurs() {
 
     const Navigate = useNavigate();
 
@@ -14,11 +14,11 @@ function Encadrant() {
   // User Login info
   const database = [
     {
-      username: "encadrant1",
+      username: "superviseur1",
       password: "pass1"
     },
     {
-      username: "encadrant2",
+      username: "superviseur2",
       password: "pass2"
     }
   ];
@@ -44,7 +44,7 @@ function Encadrant() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-         Navigate("/Formulaire");
+        Navigate("/FormulaireSuperviseurs");
         
       }
     } else {
@@ -75,7 +75,7 @@ function Encadrant() {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" value="s'inscrire" />
+          <input type="submit" value="connexion" />
         </div>
       </form>
     </div>
@@ -110,4 +110,4 @@ function Encadrant() {
   );
 }
 
-export default Encadrant;
+export default Superviseurs;

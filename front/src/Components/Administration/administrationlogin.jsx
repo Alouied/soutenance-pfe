@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./administrationlogin.css";
 
-function Jury() {
+
+
+
+function Administration() {
 
     const Navigate = useNavigate();
 
@@ -14,11 +17,11 @@ function Jury() {
   // User Login info
   const database = [
     {
-      username: "jury1",
+      username: "user1",
       password: "pass1"
     },
     {
-      username: "jury2",
+      username: "user2",
       password: "pass2"
     }
   ];
@@ -45,7 +48,7 @@ function Jury() {
       } else {
         setIsSubmitted(true);
          Navigate("/Formulaire");
-        
+       
       }
     } else {
       // Username not found
@@ -75,7 +78,7 @@ function Jury() {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" value="s'inscrire" />
+          <input type="submit" value="Connexion" />
         </div>
       </form>
     </div>
@@ -89,13 +92,13 @@ function Jury() {
                 <a href="#Administration"  class="actif">Administration</a>
               </li>
               <li>
-                <a href="/superviseurs">Superviseurs</a>
+               <a href="/Superviseurs"> Superviseurs</a>
               </li>
               <li>
-                <a href="#">Encadrants</a>
+                <a href="/Encadrant">Encadrants</a>
               </li>
               <li>
-                <a href="#">Jurys</a>
+                <a href="/Jury">Jurys</a>
               </li>
         </ul>
     </body>
@@ -110,4 +113,4 @@ function Jury() {
   );
 }
 
-export default Jury;
+export default Administration;

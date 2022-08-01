@@ -1,12 +1,8 @@
-import {Routes,Route} from 'react-router-dom';
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import "./administrationlogin.css";
+import "./jurylogin.css";
 
-
-
-
-function Administration() {
+function Jury() {
 
     const Navigate = useNavigate();
 
@@ -18,11 +14,11 @@ function Administration() {
   // User Login info
   const database = [
     {
-      username: "user1",
+      username: "jury1",
       password: "pass1"
     },
     {
-      username: "user2",
+      username: "jury2",
       password: "pass2"
     }
   ];
@@ -48,8 +44,8 @@ function Administration() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-         Navigate("/Formulaire");
-       
+         Navigate("/FormulaireJury");
+        
       }
     } else {
       // Username not found
@@ -79,7 +75,7 @@ function Administration() {
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" value="s'inscrire" />
+          <input type="submit" value="connexion" />
         </div>
       </form>
     </div>
@@ -93,13 +89,13 @@ function Administration() {
                 <a href="#Administration"  class="actif">Administration</a>
               </li>
               <li>
-               <a href="/Superviseurs"> Superviseurs</a>
+                <a href="/superviseurs">Superviseurs</a>
               </li>
               <li>
-                <a href="/Encadrant">Encadrants</a>
+                <a href="#">Encadrants</a>
               </li>
               <li>
-                <a href="/Jury">Jurys</a>
+                <a href="#">Jurys</a>
               </li>
         </ul>
     </body>
@@ -114,4 +110,4 @@ function Administration() {
   );
 }
 
-export default Administration;
+export default Jury;
